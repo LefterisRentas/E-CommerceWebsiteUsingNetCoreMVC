@@ -6,10 +6,12 @@ namespace E_CommerceWebsiteUsingNetCoreMVC.Models
     {
         [Key]
         public int Id { get; set; }
-        [Display(Name="Category Name")]
+        [Display(Name = "Category Name")]
         [Required]
+        [MaxLength(30)]
         public string Name { get; set; }
-        [Display(Name="Display Order")]
+        [Display(Name = "Display Order")]
+        [Range(1, 100, ErrorMessage = "The valid range for this field is from 1 to 100")]
         public int DisplayOrder { get; set; }
     }
 }

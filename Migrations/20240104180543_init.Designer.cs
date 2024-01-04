@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace E_CommerceWebsiteUsingNetCoreMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240102133701_init")]
+    [Migration("20240104180543_init")]
     partial class init
     {
         /// <inheritdoc />
