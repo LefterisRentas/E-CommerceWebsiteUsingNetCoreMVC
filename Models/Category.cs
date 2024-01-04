@@ -4,6 +4,7 @@ namespace E_CommerceWebsiteUsingNetCoreMVC.Models
 {
     public class Category
     {
+        //TODO: Make name unique for each category
         [Key]
         public int Id { get; set; }
         [Display(Name = "Category Name")]
