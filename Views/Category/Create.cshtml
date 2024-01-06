@@ -9,7 +9,7 @@
             <h2 class="text-dark">Create Category</h2>
             <hr />
         </div>
-        <div asp-validation-summary="All"></div>
+        @*<div asp-validation-summary="All"></div>*@
         <div class="mb-3 row p-1">
             <label asp-for="Name" class="p-0"></label>
             <input class="form-control" asp-for="Name" />
@@ -33,3 +33,7 @@
 
     </div>
 </form>
+@section Scripts 
+{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
