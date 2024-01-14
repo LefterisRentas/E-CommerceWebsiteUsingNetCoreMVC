@@ -5,6 +5,30 @@
 @{
 ViewData["Title"] = "Categories";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    @if (TempData["success_created"] != null || TempData["success_edited"] != null || TempData["success_deleted"] != null)
+    {
+        if (TempData["success_created"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> @TempData["success_created"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        else if (TempData["success_edited"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> @TempData["success_edited"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        else if (TempData["success_deleted"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> @TempData["success_deleted"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+    }
     <div class="container">
     <div class="row pt-4 pb-3">
         <div class="col-6">
@@ -36,6 +60,16 @@ ViewData["Title"] = "Categories";
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => category.DisplayOrder)
+                    </td>
+                    <td>
+                        <div class="w-75">
+                                <a asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="btn btn-dark mx-2">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </a>
+                                <a asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id" class="btn btn-danger mx-2">
+                                    <i class="bi bi-trash"></i> Delete
+                                </a>
+                        </div>
                     </td>
                 </tr>
                 }
