@@ -30,7 +30,7 @@ namespace E_CommerceWebsiteUsingNetCoreMVC.Controllers
             {
                 _db.Categories.Add(category);
                 _db.SaveChanges();
-                TempData["success_created"] = "The Category Has Been Created Successfully";
+                TempData["success"] = "The Category Has Been Created Successfully";
                 return RedirectToAction("Index");
             }
             return View();
@@ -57,7 +57,7 @@ namespace E_CommerceWebsiteUsingNetCoreMVC.Controllers
             {
                 _db.Categories.Update(category);
                 _db.SaveChanges();
-                TempData["success_edited"] = "The Category Has Been Edited Successfully";
+                TempData["success"] = "The Category Has Been Edited Successfully";
                 return RedirectToAction("Index");
             }
             return View();
@@ -91,7 +91,7 @@ namespace E_CommerceWebsiteUsingNetCoreMVC.Controllers
             }
             _db.Categories.Remove(cat);
             _db.SaveChanges();
-            TempData["success_deleted"] = "The Category Has Been Deleted Successfully";
+            TempData["success"] = "The Category Has Been Deleted Successfully";
             return RedirectToAction("Index");
         }
 
